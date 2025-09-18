@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purnima Pal</title>
+    <title>Purnima Pal - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,235 +11,169 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            @apply bg-sky-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200;
-            transition: background-color 0.3s ease;
+            background-color: #151515;
+            color: #e0e0e0;
         }
-        .apple-card {
-            background: rgba(255, 255, 255, 0.5);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+        .accent-color {
+            color: #00e691;
         }
-        .apple-card.dark {
-             background: rgba(0, 0, 0, 0.2);
-             border: 1px solid rgba(255, 255, 255, 0.1);
-             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
+        .bg-card {
+            background-color: #202020;
+            border: 1px solid #333;
         }
-        .apple-nav-item {
-            @apply px-4 py-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out;
+        .hover-effect {
+            transition: all 0.3s ease-in-out;
         }
-        .apple-nav-item.active {
-            @apply bg-white/50 dark:bg-slate-800/50 shadow-sm text-slate-900 dark:text-slate-100;
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        .apple-nav-item:not(.active):hover {
-            @apply bg-sky-100 dark:bg-slate-700;
+        .icon-link svg {
+            transition: all 0.2s ease-in-out;
+        }
+        .icon-link:hover svg {
+            fill: #00e691;
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
+<body class="antialiased">
 
-    <div class="apple-card w-full max-w-4xl p-8 rounded-3xl mx-4">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 bg-transparent backdrop-blur-sm">
+        <nav class="flex justify-center space-x-8 text-sm font-medium">
+            <a href="#hero" class="hover:text-white transition-colors duration-200">Home</a>
+            <a href="#about" class="hover:text-white transition-colors duration-200">About</a>
+            <a href="#projects" class="hover:text-white transition-colors duration-200">Projects</a>
+            <a href="#learning" class="hover:text-white transition-colors duration-200">Learning</a>
+            <a href="#contact" class="hover:text-white transition-colors duration-200">Contact</a>
+        </nav>
+    </header>
 
-        <!-- Header and Theme Toggle -->
-        <div class="flex justify-between items-center mb-8">
-            <h1 id="user-name" class="text-3xl font-bold tracking-tight">Purnima Pal</h1>
-            <button id="theme-toggle" class="p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-sky-100 dark:hover:bg-slate-700">
-                <svg id="moon-icon" class="w-6 h-6 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                </svg>
-                <svg id="sun-icon" class="w-6 h-6 hidden text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                </svg>
-            </button>
-        </div>
+    <main class="max-w-4xl mx-auto px-4">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center">
+            <div>
+                <h1 class="text-6xl sm:text-7xl font-bold tracking-tight leading-tight">
+                    Hello, I'm <span class="accent-color">Purnima Pal</span>.
+                </h1>
+                <p class="mt-4 text-2xl font-light text-gray-400">
+                    A Computer Science Master's student at the University of Chicago.
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="https://www.linkedin.com/in/purnimapal11/" target="_blank" class="icon-link p-2 rounded-full hover:bg-slate-800">
+                        <svg class="w-6 h-6 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://github.com/purnimapal11" target="_blank" class="icon-link p-2 rounded-full hover:bg-slate-800">
+                        <svg class="w-6 h-6 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.238 1.839 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.77.418-1.305.762-1.605-2.665-.304-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.204-6.086 8.204-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="mailto:purnimapal11@uchicago.edu" class="icon-link p-2 rounded-full hover:bg-slate-800">
+                        <svg class="w-6 h-6 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12.713l-11.275-10.985c-.347-.333-.746-.616-1.189-.838.455-.261.961-.41 1.488-.41h20c.527 0 1.033.149 1.488.41-.443.222-.842.505-1.189.838l-11.275 10.985zm0 2.287l-12-12v18h24v-18l-12 12zm-10-8.236l-2 1.94v8.296h2v-10.236zm20-1.764v10.236l2-1.94v-8.296h-2z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        <!-- Navigation -->
-        <div class="flex flex-col sm:flex-row items-center justify-center mb-8 bg-sky-100/50 dark:bg-slate-800/50 rounded-full p-2 space-y-2 sm:space-y-0 sm:space-x-2">
-            <div id="nav-about" class="apple-nav-item active">About Me</div>
-            <div id="nav-learning" class="apple-nav-item">My Learning</div>
-            <div id="nav-books" class="apple-nav-item">Books I'm Reading</div>
-        </div>
-
-        <!-- Content Sections -->
-        <div id="content-container">
-            <!-- About Me Section -->
-            <div id="section-about" class="section">
-                <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-slate-100">About Me</h2>
-                <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
-                    <p class="text-xl font-medium mb-4">👋 Hey, I’m Purnima</p>
-                    <p class="mb-2">💡 Engineer · ML Explorer · Future Product Strategist</p>
-                    <p class="mb-4">Currently a Master’s student in Computer Science (MPCS) @ University of Chicago</p>
-                    
-                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🚀 What I Do</h3>
-                    <ul class="list-disc pl-5 space-y-1 mb-4">
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-4xl font-bold tracking-tight mb-8">About Me</h2>
+            <div class="prose max-w-none text-gray-400">
+                <p>👋 Hey, I’m Purnima</p>
+                <p class="mt-2">💡 Engineer · ML Explorer · Future Product Strategist</p>
+                <p class="mt-2">Currently a Master’s student in Computer Science (MPCS) @ University of Chicago</p>
+            </div>
+            <div class="mt-12 grid md:grid-cols-2 gap-8">
+                <div class="bg-card p-6 rounded-lg hover-effect">
+                    <h3 class="text-xl font-bold accent-color mb-2">🚀 What I Do</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
                         <li>Build intelligent systems → simulation, automation, and data-driven insights</li>
                         <li>Experiment with ML models that solve real-world problems</li>
                         <li>Think at the intersection of data + product strategy</li>
                     </ul>
-                    
-                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🔬 Featured Projects</h3>
-                    <ul class="list-disc pl-5 space-y-2 mb-4">
-                        <li>
-                            <strong class="font-medium">🌱 Plant Disease Detection:</strong><br>
-                            <span class="text-sm">CNN + Focal Loss + ResNet → Boosted accuracy from 78% → 92% on 50k+ image dataset<br>(Practical edge: early detection saves yield + farmers’ time)</span>
-                        </li>
-                        <li>
-                            <strong class="font-medium">🌾 Crop Forecasting with SARIMA:</strong><br>
-                            <span class="text-sm">Forecasted crop yield cycles using NDVI vegetation data + SARIMA<br>(Because forecasting food is cooler than forecasting stock prices 🌽)</span>
-                        </li>
-                    </ul>
-                    
-                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🛠️ Toolbox</h3>
-                    <p class="mb-4">
+                </div>
+                <div class="bg-card p-6 rounded-lg hover-effect">
+                    <h3 class="text-xl font-bold accent-color mb-2">🛠️ Toolbox</h3>
+                    <p class="text-gray-400">
                         Python · TensorFlow · Keras · Scikit-learn · SystemC<br>
                         Pandas · SQL · Docker · Spring Boot · OpenCV
                     </p>
-                    
-                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">✨ Currently</h3>
-                    <ul class="list-disc pl-5 space-y-1 mb-4">
-                        <li>Exploring AI/ML and product strategy at UChicago</li>
-                        <li>Seeking opportunities to build, learn, and impact (Summer ’26 internships 👀)</li>
-                    </ul>
-                    
-                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🌐 Let’s Connect</h3>
-                    <p class="mb-4">
-                        <a href="#" class="underline hover:no-underline">LinkedIn</a> · 
-                        <a href="#" class="underline hover:no-underline">GitHub</a> · 
-                        <a href="#" class="underline hover:no-underline">Email</a>
-                    </p>
-
-                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">📌 Fun Fact</h3>
-                    <p>I treat my projects like products. If they don’t solve a real problem, they don’t make the cut.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- My Learning Section -->
-            <div id="section-learning" class="section hidden">
-                <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-slate-100">My Learning at UChicago</h2>
-                <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
-                    <p>
-                        This is where you can write about your specific courses, projects, and key takeaways from your Computer Science Master's program at the University of Chicago. You could talk about a challenging class, a new technology you've mastered, or a personal side project that has enhanced your skills.
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold tracking-tight mb-8">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-card p-6 rounded-lg hover-effect">
+                    <h3 class="text-xl font-bold accent-color mb-2">🌱 Plant Disease Detection</h3>
+                    <p class="text-sm text-gray-400">
+                        CNN + Focal Loss + ResNet → Boosted accuracy from 78% → 92% on 50k+ image dataset<br>
+                        <span class="italic text-gray-500">(Practical edge: early detection saves yield + farmers’ time)</span>
                     </p>
-                    <p>
-                        For example, you could add:
+                </div>
+                <div class="bg-card p-6 rounded-lg hover-effect">
+                    <h3 class="text-xl font-bold accent-color mb-2">🌾 Crop Forecasting with SARIMA</h3>
+                    <p class="text-sm text-gray-400">
+                        Forecasted crop yield cycles using NDVI vegetation data + SARIMA<br>
+                        <span class="italic text-gray-500">(Because forecasting food is cooler than forecasting stock prices 🌽)</span>
                     </p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>
-                            <strong class="font-medium">Advanced Data Mining:</strong> Gained hands-on experience with clustering algorithms like K-Means and DBSCAN, and learned to apply them to large-scale datasets.
-                        </li>
-                        <li>
-                            <strong class="font-medium">Parallel Computing:</strong> Explored the fundamentals of parallel processing and developed high-performance algorithms for scientific simulations.
-                        </li>
-                    </ul>
                 </div>
             </div>
+        </section>
 
-            <!-- Books Section -->
-            <div id="section-books" class="section hidden">
-                <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-slate-100">Books I'm Reading</h2>
-                <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
-                    <p>
-                        Use this section to share your thoughts on books you're currently reading. You can list the title, author, and a brief review or key insight.
-                    </p>
-                    <div class="mb-4">
-                        <strong class="font-medium">Title:</strong> The Hard Thing About Hard Things<br>
-                        <strong class="font-medium">Author:</strong> Ben Horowitz<br>
-                        <p class="text-sm mt-1">A fantastic book on the challenges of running a business, filled with candid advice from a seasoned entrepreneur. It's a great read for anyone interested in product strategy and leadership.</p>
+        <!-- My Learning Section -->
+        <section id="learning" class="py-20">
+            <h2 class="text-4xl font-bold tracking-tight mb-8">My Learning at UChicago</h2>
+            <div class="bg-card p-6 rounded-lg">
+                <p class="text-gray-400">
+                    This is where you can write about your specific courses, projects, and key takeaways from your Computer Science Master's program at the University of Chicago. You could talk about a challenging class, a new technology you've mastered, or a personal side project that has enhanced your skills.
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4 text-gray-400">
+                    <li>
+                        <strong class="font-medium text-white">Advanced Data Mining:</strong> Gained hands-on experience with clustering algorithms like K-Means and DBSCAN, and learned to apply them to large-scale datasets.
+                    </li>
+                    <li>
+                        <strong class="font-medium text-white">Parallel Computing:</strong> Explored the fundamentals of parallel processing and developed high-performance algorithms for scientific simulations.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Books I'm Reading Section -->
+        <section id="books" class="py-20">
+            <h2 class="text-4xl font-bold tracking-tight mb-8">Books I'm Reading</h2>
+            <div class="bg-card p-6 rounded-lg">
+                <p class="text-gray-400">
+                    Use this section to share your thoughts on books you're currently reading. You can list the title, author, and a brief review or key insight.
+                </p>
+                <div class="mt-4 space-y-4">
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <strong class="font-medium text-white">Title:</strong> The Hard Thing About Hard Things<br>
+                        <strong class="font-medium text-gray-300">Author:</strong> Ben Horowitz<br>
+                        <p class="text-sm mt-1 text-gray-400">A fantastic book on the challenges of running a business, filled with candid advice from a seasoned entrepreneur. It's a great read for anyone interested in product strategy and leadership.</p>
                     </div>
-                    <div>
-                        <strong class="font-medium">Title:</strong> Clean Code<br>
-                        <strong class="font-medium">Author:</strong> Robert C. Martin<br>
-                        <p class="text-sm mt-1">A classic for any software engineer. It has completely changed the way I think about writing readable and maintainable code. A must-read.</p>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <strong class="font-medium text-white">Title:</strong> Clean Code<br>
+                        <strong class="font-medium text-gray-300">Author:</strong> Robert C. Martin<br>
+                        <p class="text-sm mt-1 text-gray-400">A classic for any software engineer. It has completely changed the way I think about writing readable and maintainable code. A must-read.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navAbout = document.getElementById('nav-about');
-            const navLearning = document.getElementById('nav-learning');
-            const navBooks = document.getElementById('nav-books');
-
-            const sectionAbout = document.getElementById('section-about');
-            const sectionLearning = document.getElementById('section-learning');
-            const sectionBooks = document.getElementById('section-books');
-
-            const themeToggle = document.getElementById('theme-toggle');
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            const appleCard = document.querySelector('.apple-card');
-            const userName = document.getElementById('user-name');
-
-            // Set initial theme based on system preference or local storage
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            let currentTheme = 'light';
-
-            if (savedTheme) {
-                currentTheme = savedTheme;
-            } else if (prefersDark) {
-                currentTheme = 'dark';
-            }
-
-            if (currentTheme === 'dark') {
-                document.documentElement.classList.add('dark');
-                appleCard.classList.add('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }
-
-            themeToggle.addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark');
-                appleCard.classList.toggle('dark', isDark);
-                
-                if (isDark) {
-                    localStorage.setItem('theme', 'dark');
-                    sunIcon.classList.remove('hidden');
-                    moonIcon.classList.add('hidden');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                    sunIcon.classList.add('hidden');
-                    moonIcon.classList.remove('hidden');
-                }
-            });
-
-            // Function to handle tab clicks
-            const changeSection = (sectionToShow) => {
-                // Hide all sections
-                [sectionAbout, sectionLearning, sectionBooks].forEach(section => {
-                    section.classList.add('hidden');
-                });
-                // Remove active class from all nav items
-                [navAbout, navLearning, navBooks].forEach(navItem => {
-                    navItem.classList.remove('active');
-                });
-
-                // Show the selected section and activate the corresponding nav item
-                if (sectionToShow === 'about') {
-                    sectionAbout.classList.remove('hidden');
-                    navAbout.classList.add('active');
-                } else if (sectionToShow === 'learning') {
-                    sectionLearning.classList.remove('hidden');
-                    navLearning.classList.add('active');
-                } else if (sectionToShow === 'books') {
-                    sectionBooks.classList.remove('hidden');
-                    navBooks.classList.add('active');
-                }
-            };
-
-            // Event listeners for navigation
-            navAbout.addEventListener('click', () => changeSection('about'));
-            navLearning.addEventListener('click', () => changeSection('learning'));
-            navBooks.addEventListener('click', () => changeSection('books'));
-        });
-    </script>
+        <!-- Footer / Contact Section -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-4xl font-bold tracking-tight mb-8">Let's Connect</h2>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="https://www.linkedin.com/in/purnimapal11/" target="_blank" class="hover:text-white transition-colors duration-200">LinkedIn</a>
+                <a href="https://github.com/purnimapal11" target="_blank" class="hover:text-white transition-colors duration-200">GitHub</a>
+                <a href="mailto:purnimapal11@uchicago.edu" class="hover:text-white transition-colors duration-200">Email</a>
+            </div>
+            <p class="mt-8 text-xs text-gray-500">
+                Purnima Pal | Last Updated: [Current Date]
+            </p>
+        </section>
+    </main>
 
 </body>
 </html>
