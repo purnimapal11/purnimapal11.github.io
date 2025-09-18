@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purnima Pal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-sky-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200;
+            transition: background-color 0.3s ease;
+        }
+        .apple-card {
+            background: rgba(255, 255, 255, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .apple-card.dark {
+             background: rgba(0, 0, 0, 0.2);
+             border: 1px solid rgba(255, 255, 255, 0.1);
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+        .apple-nav-item {
+            @apply px-4 py-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out;
+        }
+        .apple-nav-item.active {
+            @apply bg-white/50 dark:bg-slate-800/50 shadow-sm text-slate-900 dark:text-slate-100;
+        }
+        .apple-nav-item:not(.active):hover {
+            @apply bg-sky-100 dark:bg-slate-700;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="apple-card w-full max-w-4xl p-8 rounded-3xl mx-4">
+
+        <!-- Header and Theme Toggle -->
+        <div class="flex justify-between items-center mb-8">
+            <h1 id="user-name" class="text-3xl font-bold tracking-tight">Purnima Pal</h1>
+            <button id="theme-toggle" class="p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-sky-100 dark:hover:bg-slate-700">
+                <svg id="moon-icon" class="w-6 h-6 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+                <svg id="sun-icon" class="w-6 h-6 hidden text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex flex-col sm:flex-row items-center justify-center mb-8 bg-sky-100/50 dark:bg-slate-800/50 rounded-full p-2 space-y-2 sm:space-y-0 sm:space-x-2">
+            <div id="nav-about" class="apple-nav-item active">About Me</div>
+            <div id="nav-learning" class="apple-nav-item">My Learning</div>
+            <div id="nav-books" class="apple-nav-item">Books I'm Reading</div>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="content-container">
+            <!-- About Me Section -->
+            <div id="section-about" class="section">
+                <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-slate-100">About Me</h2>
+                <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
+                    <p class="text-xl font-medium mb-4">👋 Hey, I’m Purnima</p>
+                    <p class="mb-2">💡 Engineer · ML Explorer · Future Product Strategist</p>
+                    <p class="mb-4">Currently a Master’s student in Computer Science (MPCS) @ University of Chicago</p>
+                    
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🚀 What I Do</h3>
+                    <ul class="list-disc pl-5 space-y-1 mb-4">
+                        <li>Build intelligent systems → simulation, automation, and data-driven insights</li>
+                        <li>Experiment with ML models that solve real-world problems</li>
+                        <li>Think at the intersection of data + product strategy</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🔬 Featured Projects</h3>
+                    <ul class="list-disc pl-5 space-y-2 mb-4">
+                        <li>
+                            <strong class="font-medium">🌱 Plant Disease Detection:</strong><br>
+                            <span class="text-sm">CNN + Focal Loss + ResNet → Boosted accuracy from 78% → 92% on 50k+ image dataset<br>(Practical edge: early detection saves yield + farmers’ time)</span>
+                        </li>
+                        <li>
+                            <strong class="font-medium">🌾 Crop Forecasting with SARIMA:</strong><br>
+                            <span class="text-sm">Forecasted crop yield cycles using NDVI vegetation data + SARIMA<br>(Because forecasting food is cooler than forecasting stock prices 🌽)</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🛠️ Toolbox</h3>
+                    <p class="mb-4">
+                        Python · TensorFlow · Keras · Scikit-learn · SystemC<br>
+                        Pandas · SQL · Docker · Spring Boot · OpenCV
+                    </p>
+                    
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">✨ Currently</h3>
+                    <ul class="list-disc pl-5 space-y-1 mb-4">
+                        <li>Exploring AI/ML and product strategy at UChicago</li>
+                        <li>Seeking opportunities to build, learn, and impact (Summer ’26 internships 👀)</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">🌐 Let’s Connect</h3>
+                    <p class="mb-4">
+                        <a href="#" class="underline hover:no-underline">LinkedIn</a> · 
+                        <a href="#" class="underline hover:no-underline">GitHub</a> · 
+                        <a href="#" class="underline hover:no-underline">Email</a>
+                    </p>
+
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900 dark:text-slate-100">📌 Fun Fact</h3>
+                    <p>I treat my projects like products. If they don’t solve a real problem, they don’t make the cut.</p>
+                </div>
+            </div>
+
+            <!-- My Learning Section -->
+            <div id="section-learning" class="section hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-slate-100">My Learning at UChicago</h2>
+                <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
+                    <p>
+                        This is where you can write about your specific courses, projects, and key takeaways from your Computer Science Master's program at the University of Chicago. You could talk about a challenging class, a new technology you've mastered, or a personal side project that has enhanced your skills.
+                    </p>
+                    <p>
+                        For example, you could add:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>
+                            <strong class="font-medium">Advanced Data Mining:</strong> Gained hands-on experience with clustering algorithms like K-Means and DBSCAN, and learned to apply them to large-scale datasets.
+                        </li>
+                        <li>
+                            <strong class="font-medium">Parallel Computing:</strong> Explored the fundamentals of parallel processing and developed high-performance algorithms for scientific simulations.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Books Section -->
+            <div id="section-books" class="section hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-slate-100">Books I'm Reading</h2>
+                <div class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
+                    <p>
+                        Use this section to share your thoughts on books you're currently reading. You can list the title, author, and a brief review or key insight.
+                    </p>
+                    <div class="mb-4">
+                        <strong class="font-medium">Title:</strong> The Hard Thing About Hard Things<br>
+                        <strong class="font-medium">Author:</strong> Ben Horowitz<br>
+                        <p class="text-sm mt-1">A fantastic book on the challenges of running a business, filled with candid advice from a seasoned entrepreneur. It's a great read for anyone interested in product strategy and leadership.</p>
+                    </div>
+                    <div>
+                        <strong class="font-medium">Title:</strong> Clean Code<br>
+                        <strong class="font-medium">Author:</strong> Robert C. Martin<br>
+                        <p class="text-sm mt-1">A classic for any software engineer. It has completely changed the way I think about writing readable and maintainable code. A must-read.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navAbout = document.getElementById('nav-about');
+            const navLearning = document.getElementById('nav-learning');
+            const navBooks = document.getElementById('nav-books');
+
+            const sectionAbout = document.getElementById('section-about');
+            const sectionLearning = document.getElementById('section-learning');
+            const sectionBooks = document.getElementById('section-books');
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const appleCard = document.querySelector('.apple-card');
+            const userName = document.getElementById('user-name');
+
+            // Set initial theme based on system preference or local storage
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            let currentTheme = 'light';
+
+            if (savedTheme) {
+                currentTheme = savedTheme;
+            } else if (prefersDark) {
+                currentTheme = 'dark';
+            }
+
+            if (currentTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                appleCard.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                appleCard.classList.toggle('dark', isDark);
+                
+                if (isDark) {
+                    localStorage.setItem('theme', 'dark');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            });
+
+            // Function to handle tab clicks
+            const changeSection = (sectionToShow) => {
+                // Hide all sections
+                [sectionAbout, sectionLearning, sectionBooks].forEach(section => {
+                    section.classList.add('hidden');
+                });
+                // Remove active class from all nav items
+                [navAbout, navLearning, navBooks].forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+
+                // Show the selected section and activate the corresponding nav item
+                if (sectionToShow === 'about') {
+                    sectionAbout.classList.remove('hidden');
+                    navAbout.classList.add('active');
+                } else if (sectionToShow === 'learning') {
+                    sectionLearning.classList.remove('hidden');
+                    navLearning.classList.add('active');
+                } else if (sectionToShow === 'books') {
+                    sectionBooks.classList.remove('hidden');
+                    navBooks.classList.add('active');
+                }
+            };
+
+            // Event listeners for navigation
+            navAbout.addEventListener('click', () => changeSection('about'));
+            navLearning.addEventListener('click', () => changeSection('learning'));
+            navBooks.addEventListener('click', () => changeSection('books'));
+        });
+    </script>
+
+</body>
+</html>
